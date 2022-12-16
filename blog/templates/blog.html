@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<!-- Cargar automt. cada titulo que se lee -->
+{% block title %} {{post.title}} {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<main class="main-blog">
+    <div class="main-blog__content">
+        <img src="{{ post.image.url }}" alt="">
+        <article class="blog-content__article">
+            <h4>Noticia</h4>
+            <h1>{{ post.title }}</h1>
+            <!-- Filtro para que funcine el Ckeditor -->
+            <div>{{ post.contenido|safe }}</div>
+        </article>
+    </div>
+</main>
+{% endblock %}

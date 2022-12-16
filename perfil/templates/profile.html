@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} Mi Perfil {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<main class="main-profile">
+    <section class="profile">
+        <div class="profile-img">
+            <img src="{% static 'img/profile-picc.jpg' %}" alt="">
+        </div>
+        <div class="profile-info">
+            <h2>Hola, mi nombre es José Carrión</h2>
+            <p>
+                Entusiasta de la tecnología y sus bases, con conocimientos amplios en varios
+                lenguajes de programación y gran adaptabilidad frente a nuevos retos. Mis estudios
+                me han permitido aprender sobre las bases de la programación así como el
+                desarrollo, metodologías y pruebas de software. Además, de otras tecnologías para
+                complementar el despliegue del software como contenedores y desarrollo en la
+                nube.
+            </p>
+        </div>
+    </section>
+    <section class="project-container">
+        <h3>Proyectos</h3>
+        {% for project in projects %}
+        <div class="project">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.descripcion }}</p>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+
+{% endblock %}
